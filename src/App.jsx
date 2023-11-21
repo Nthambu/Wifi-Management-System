@@ -16,6 +16,8 @@ function App() {
           {/* <img src={reactLogo} className="logo react" alt="React logo" /> */}
           <p>images</p>
           <p>Another commit meesage</p>
+          <p>My third commit message and last</p>
+          <p>my last</p>
           
         </a>
       </div>
