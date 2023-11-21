@@ -1,4 +1,8 @@
 function Button() {
-  return <div>Button</div>;
+  return (
+    <>
+      <button>Click me</button>
+    </>
+  );
 }
 export default Button;
