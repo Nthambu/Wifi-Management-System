@@ -17,7 +17,8 @@ function App() {
         <a href="https://react.dev" target="_blank">
           {/* <img src={reactLogo} className="logo react" alt="React logo" /> */}
           <p>images</p>
-          <p>Another commit meesage</p>
+          
+
         </a>
       </div>
       <h1>Vite and React</h1>
