@@ -1,10 +1,7 @@
-function Button() {
-  const handleClick = () => {
-    alert("button clicked");
-  };
+function Button({ text }) {
   return (
     <>
-      <button onClick={handleClick}>Click me</button>
+      <button className="button">{text}</button>
     </>
   );
 }
