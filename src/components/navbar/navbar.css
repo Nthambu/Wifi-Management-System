@@ -1,0 +1,26 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  background-color: var(--container-color);
+  padding-block: 5px;
+  box-shadow: 0 0 8px hsl(0, 0%, 0.3%);
+  display: flex;
+  column-gap: 14px;
+}
+.navbar_icon {
+  padding-left: 20px;
+  font-weight: var(--weight-800);
+  padding-top: 2px;
+}
+
+.navbar_header,
+.navbar_icon {
+  font-family: var(--second-font);
+  font-size: 24px;
+  line-height: 1.6;
+  color: var(--main-color);
+}
+.navbar_header {
+  font-weight: var(--weight-700);
+}
