@@ -1,40 +1,73 @@
+import { useEffect, useState } from "react";
+import Subscription from "../../components/Subscription";
 import "./home.css";
 
 function Home() {
+  const [paymentValues, setPaymentValues] = useState(null);
+  const [modal, setModal] = useState(false);
+
+  useEffect(() => {
+    console.log(paymentValues);
+    setModal(true);
+  }, [paymentValues]);
+
   return (
     <main className="home grid">
       <section className=" card">
         <h3 className="card_title">How to Purchase:</h3>
         <ol className="desc_list">
-          <li>Tap on your preffered package.</li>
+          <li>Tap on your preferred package.</li>
           <li>Enter your phone number</li>
           <li>Click "PAY NOW"</li>
           <li>
-            Enter your m-pesa pin, wait for 30 sec for mpesa authentication
+            Enter your M-pesa pin, wait for 30 sec for M-pesa authentication
           </li>
         </ol>
       </section>
 
-      {/* <section className="packages_wrapper">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </section> */}
-
-      <section className="payment_wrapper">
-        <form action="">
-          <input
-            type="text"
-            placeholder="Enter Phone"
-            className="form-control"
-          />
-          <button type="button" className="button">
-            Pay Now
-          </button>
-        </form>
+      <section className="payment_plans">
+        <div className="packages_wrapper grid">
+          <Subscription setPaymentValues={setPaymentValues} />
+        </div>
+        {paymentValues && modal && (
+          <div className="modal_wrapper">
+            <div className="modal_content">
+              <h4 className="modal_title">
+                You are about to Subscribe to : {paymentValues} plan
+              </h4>
+              <h6 className="modal_subtitle">press okay to continue</h6>
+              <button
+                type="button"
+                className="button_modal"
+                onClick={() => setModal(false)}
+              >
+                okay
+              </button>
+            </div>
+          </div>
+        )}
+        <div className="payment_wrapper">
+          <form action="">
+            <input
+              type="text"
+              value={paymentValues}
+              className="form-control"
+              disabled
+            />
+            <input
+              type="text"
+              placeholder="Enter Phone Number"
+              className="form-control"
+            />
+            <button
+              type="button"
+              className="button"
+              onClick={() => setPaymentValues(null)}
+            >
+              Pay Now
+            </button>
+          </form>
+        </div>
       </section>
 
       <section className="account_reconnect card">
@@ -46,7 +79,7 @@ function Home() {
           <input
             type="text"
             className="form-control"
-            placeholder="Enter Mpesa Code you paid with"
+            placeholder="Enter M-pesa Code you paid with"
           />
           <button type="submit" className="button">
             Reconnect
