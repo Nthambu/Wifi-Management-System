@@ -2,14 +2,14 @@ export const SubscriptionOptions = [
   {
     id: 1,
     name: "KSH:10/-",
-    amount: "10",
+    amount: 10,
     timeLimit: "2 hrs Unlimited",
     speedLimit: "MAX 2mbps",
   },
   {
     id: 2,
     name: "KSH:15/-",
-    amount: "15",
+    amount: 15,
     timeLimit: "4 hrs Unlimited",
     speedLimit: "MAX 2mbps",
   },

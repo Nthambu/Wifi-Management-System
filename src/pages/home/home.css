@@ -15,7 +15,7 @@ section {
   font-size: 14px;
 }
 
-.form-control {
+.form_control {
   border: 1px solid var(--border-color);
   background-color: var(--text-white);
   color: var(--text-color);
@@ -27,11 +27,22 @@ section {
   margin-bottom: 10px;
 }
 
-.form-control:hover,
-.form-control:focus {
+.form_control:hover,
+.form_control:focus {
   border: 1px solid var(--main-color);
 }
+.input-error {
+  border: 1px solid red;
+}
 
+.form_control,
+.text_error {
+  margin-bottom: 5px;
+}
+.text_error {
+  font-size: var(--small-font-size);
+  color: red;
+}
 .button {
   color: var(--title-color);
   border: 1px solid var(--main-color);
