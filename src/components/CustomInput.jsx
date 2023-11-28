@@ -2,7 +2,7 @@ import { useField } from "formik";
 
 const CustomInput = (props) => {
   const [field, meta] = useField(props);
-
+  console.log(field);
   return (
     <>
       <input

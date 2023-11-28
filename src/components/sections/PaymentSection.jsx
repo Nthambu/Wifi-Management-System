@@ -2,16 +2,16 @@ import { useState, useEffect } from "react";
 import Subscription from "../Subscription";
 import CustomButton from "../CustomButton";
 import CustomInput from "../CustomInput";
-import { Formik, Form } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
 const PaymentSection = () => {
-  const [paymentValue, setPaymentValue] = useState(null);
+  const [amount, setAmount] = useState(null);
   const [modal, setModal] = useState(false);
 
   console.log("First value ".paymentValue);
   const paymentInitialValues = {
-    amount: paymentValue,
+    amount: amount,
     phoneNumber: "",
   };
 
@@ -21,27 +21,26 @@ const PaymentSection = () => {
   });
 
   const handleSubmit = (actions, values) => {
-    console.log(values.amount);
+    console.log("Amount : ".amount, "Number : ".values.phoneNumber);
     actions.resetForm();
-    setPaymentValue(0);
+    setAmount(0);
   };
 
   useEffect(() => {
     setModal(true);
-    console.log(paymentValue);
-  }, [paymentValue]);
+  }, [amount]);
 
   return (
     <>
       <div className="packages_wrapper grid">
-        <Subscription setPaymentValue={setPaymentValue} />
+        <Subscription setAmount={setAmount} />
       </div>
 
-      {paymentValue && modal && (
+      {amount && modal && (
         <div className="modal_wrapper">
           <div className="modal_content">
             <h4 className="modal_titles">
-              You are about to Subscribe KSH : {paymentValue} plan
+              You are about to Subscribe KSH : {amount} plan
             </h4>
             <h6 className="modal_subtitle">press okay to continue</h6>
             <CustomButton
@@ -62,11 +61,10 @@ const PaymentSection = () => {
         >
           {(formik) => (
             <Form>
-              <CustomInput
-                name="amount"
-                type="text"
-                placeholder="Amount will appear here"
-              />
+              <p className="payment_amount">
+                Pay ksh: {amount ? amount : 0} to Wispman wifi
+              </p>
+
               <CustomInput
                 type="text"
                 placeholder="Enter Phone Number"

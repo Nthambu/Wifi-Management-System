@@ -1,7 +1,7 @@
 import { useFormikContext } from "formik";
 import { SubscriptionOptions } from "../../data";
 
-const Subscription = ({ setPaymentValue }) => {
+const Subscription = ({ setAmount }) => {
   return (
     <>
       {SubscriptionOptions.map(
@@ -10,7 +10,7 @@ const Subscription = ({ setPaymentValue }) => {
             className="subscription_wrapper"
             key={index}
             onClick={() => {
-              setPaymentValue(amount);
+              setAmount(amount);
             }}
           >
             <h4 className="subscription_amount">{name}</h4>

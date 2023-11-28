@@ -151,3 +151,12 @@ section {
   font-size: 14px;
   font-family: var(--second-font);
 }
+
+.payment_amount {
+  font-family: var(--second-font);
+  font-size: 18px;
+  font-weight: var(--700);
+  line-height: 1.4;
+  margin-block: 8px;
+  text-align: center;
+}
